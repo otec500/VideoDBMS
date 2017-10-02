@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoDBMS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="310" Width="247">
+    <Grid Margin="0,0,2,0">
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="81,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="81,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="126,163,0,0" VerticalAlignment="Top" Width="75" Click="btnLogin_Click"/>
+        <Button x:Name="btnSignup" Content="Sign Up" HorizontalAlignment="Left" Margin="126,210,0,0" VerticalAlignment="Top" Width="75" Click="btnSignup_Click"/>
+        <Label x:Name="lblUsername" Content="Username" HorizontalAlignment="Left" Margin="17,78,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPassword" Content="Password" HorizontalAlignment="Left" Margin="20,119,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

@@ -55,6 +55,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin.cs" />
+    <Compile Include="Film.cs" />
+    <Compile Include="formAddFilm.xaml.cs">
+      <DependentUpon>formAddFilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formAddOrder.xaml.cs">
+      <DependentUpon>formAddOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formAdminPanel.xaml.cs">
+      <DependentUpon>formAdminPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formGenres.xaml.cs">
+      <DependentUpon>formGenres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formSignup.xaml.cs">
+      <DependentUpon>formSignup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formUserPanel.xaml.cs">
+      <DependentUpon>formUserPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Page Include="formAddFilm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formAddOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formAdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formGenres.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formSignup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formUserPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
