@@ -25,8 +25,8 @@
         <Label x:Name="lblDirector" Content="Director" HorizontalAlignment="Left" Margin="339,70,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblYear" Content="Year" HorizontalAlignment="Left" Margin="339,108,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblGenre" Content="Genre" HorizontalAlignment="Left" Margin="339,149,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSearch" Content="Button" HorizontalAlignment="Left" Margin="401,195,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
-        <Button x:Name="btnAddOrder" Content="Button" HorizontalAlignment="Left" Margin="134,232,0,0" VerticalAlignment="Top" Width="75" Click="btnAddOrder_Click"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="401,195,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
+        <Button x:Name="btnAddOrder" Content="Order" HorizontalAlignment="Left" Margin="134,232,0,0" VerticalAlignment="Top" Width="75" Click="btnAddOrder_Click"/>
 
     </Grid>
 </Window>

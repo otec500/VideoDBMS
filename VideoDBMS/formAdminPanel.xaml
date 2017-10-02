@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoDBMS"
         mc:Ignorable="d"
-        Title="formAdminPanel" Height="300" Width="556">
+        Title="formAdminPanel" Height="300" Width="556" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="131*"/>

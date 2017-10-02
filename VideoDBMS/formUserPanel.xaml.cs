@@ -90,5 +90,10 @@ namespace VideoDBMS
             }
             lsvOrders.ItemsSource = filmList;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            new MainWindow().Show(); ;
+        }
     }
 }

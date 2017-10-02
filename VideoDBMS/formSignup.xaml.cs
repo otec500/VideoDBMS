@@ -33,7 +33,7 @@ namespace VideoDBMS
             this.CurrentUser.Name = txtUsername.Text;
             this.CurrentUser.Password = txtPassword.Text;
             this.CurrentUser.BirthDate = (System.DateTime)datBirthdate.SelectedDate;
-            this.CurrentUser.Status = 1;
+            this.CurrentUser.Status = 2;
 
             //string mName, mPassword;
             //DateTime mBirthDate;

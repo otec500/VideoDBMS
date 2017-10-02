@@ -87,11 +87,13 @@ namespace VideoDBMS
             {
                 formUserPanel userPanel = new formUserPanel(mUser);
                 userPanel.Show();
+                this.Close();
             }
             else if(mUser.Status == 1)
             {
                 formAdminPanel adminPanel = new formAdminPanel(mUser);
                 adminPanel.Show();
+                this.Close();
             }
             else
             {

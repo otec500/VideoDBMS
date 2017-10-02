@@ -50,7 +50,13 @@ namespace VideoDBMS
 
         private void btnRent_Click(object sender, RoutedEventArgs e)
         {
+            formAddRent form = new formAddRent();
+            form.Show();
+        }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            new MainWindow().Show();
         }
     }
 }
