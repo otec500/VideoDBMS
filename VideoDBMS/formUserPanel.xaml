@@ -12,14 +12,17 @@
         <Label x:Name="lblBirthDate" Content="Label" HorizontalAlignment="Left" Margin="424,38,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="424,172,0,0" VerticalAlignment="Top" Width="97"/>
         <Button x:Name="btnAddOrder" Content="Order" HorizontalAlignment="Left" Margin="424,134,0,0" VerticalAlignment="Top" Width="75" Click="btnAddOrder_Click"/>
-        <ListView x:Name="lsvRents" HorizontalAlignment="Left" Height="100" Margin="27,17,0,0" VerticalAlignment="Top" Width="329">
+        <ListView x:Name="lsvRents" HorizontalAlignment="Left" Height="100" Margin="27,37,0,0" VerticalAlignment="Top" Width="329">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Title" Width="80" DisplayMemberBinding="{Binding Title}"/>
+                    <GridViewColumn Header="Director" Width="80" DisplayMemberBinding="{Binding Director}"/>
+                    <GridViewColumn Header="From" Width="80" DisplayMemberBinding="{Binding StartDate.Date}"/>
+                    <GridViewColumn Header="To" Width="80" DisplayMemberBinding="{Binding EndDate.Date}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="lsvOrders" HorizontalAlignment="Left" Height="100" Margin="27,134,0,0" VerticalAlignment="Top" Width="329">
+        <ListView x:Name="lsvOrders" HorizontalAlignment="Left" Height="100" Margin="27,163,0,0" VerticalAlignment="Top" Width="329">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Title" Width="110" DisplayMemberBinding="{Binding Title}"/>
@@ -28,6 +31,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label x:Name="lblOrders" Content="Orders" HorizontalAlignment="Left" Margin="27,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRents" Content="Rents" HorizontalAlignment="Left" Margin="28,17,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

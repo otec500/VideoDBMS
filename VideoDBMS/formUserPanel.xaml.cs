@@ -22,6 +22,14 @@ namespace VideoDBMS
     {
         User _user;
 
+        struct myRent
+        {
+            public string Title { get; set; }
+            public string Director { get; set; }
+            public DateTime StartDate { get; set; }
+            public DateTime EndDate { get; set; }
+        }
+
         public formUserPanel()
         {
             InitializeComponent();
@@ -33,6 +41,7 @@ namespace VideoDBMS
             lblName.Content = _user.Name;
             lblBirthDate.Content = _user.BirthDate.Date;
             RefreshOrders();
+            RefreshRents();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -89,6 +98,45 @@ namespace VideoDBMS
                 cmd.Connection.Close();
             }
             lsvOrders.ItemsSource = filmList;
+        }
+
+        private void RefreshRents()
+        {
+            SqlDataReader dr;
+            myRent rent;
+            List<myRent> filmList = new List<myRent>();
+
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = @"Data Source = MICHAŁ-KOMPUTER\SQLEXPRESS; Initial Catalog = VideoRental; Integrated Security = True;";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT f.Title, f.Director, r.StartDate, r.EndDate FROM Rents r JOIN Films f ON r.FilmId=f.FilmId WHERE r.UserId=@userid;", conn);
+                cmd.Parameters.Add(new SqlParameter("userid", _user.Id));
+                try
+                {
+                    dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            rent = new myRent();
+                            rent.Title = dr.GetString(0);
+                            rent.Director = dr.GetString(1);
+                            rent.StartDate = dr.GetDateTime(2);
+                            rent.EndDate = dr.GetDateTime(3);
+                            filmList.Add(rent);
+                        }
+
+                    }
+                    conn.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                cmd.Connection.Close();
+            }
+            lsvRents.ItemsSource = filmList;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
