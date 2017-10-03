@@ -109,6 +109,14 @@ namespace VideoDBMS
             formSignup window = new formSignup();
             window.ShowDialog();
             mUser = window.CurrentUser;
+
+            if (mUser.Password == "" || mUser.Name == "")
+            {
+                MessageBox.Show("Username and password can not be empty.");
+                conn.Close();
+                return;
+            }
+
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = @"Data Source = MICHAŁ-KOMPUTER\SQLEXPRESS; Initial Catalog = VideoRental; Integrated Security = True;";// Connect Timeout = 15; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
