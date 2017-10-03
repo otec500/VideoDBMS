@@ -172,5 +172,10 @@ namespace VideoDBMS
             }
             Refresh();
         }
+
+        private void btnAddRestriction_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

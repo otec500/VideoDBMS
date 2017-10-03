@@ -69,6 +69,9 @@
     <Compile Include="formAdminPanel.xaml.cs">
       <DependentUpon>formAdminPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="formChangePassword.xaml.cs">
+      <DependentUpon>formChangePassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="formGenres.xaml.cs">
       <DependentUpon>formGenres.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="formAdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formChangePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

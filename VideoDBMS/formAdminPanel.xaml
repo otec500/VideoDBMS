@@ -17,6 +17,8 @@
         <Button x:Name="btnGenresEdit" Grid.ColumnSpan="2" Content="Genres" HorizontalAlignment="Left" Margin="463,64,0,0" VerticalAlignment="Top" Width="75" Click="btnGenresEdit_Click" />
         <Button x:Name="btnFilms" Grid.ColumnSpan="2" Content="Films" HorizontalAlignment="Left" Margin="463,101,0,0" VerticalAlignment="Top" Width="75" Click="btnFilms_Click"/>
         <Button x:Name="btnRent" Grid.ColumnSpan="2" Content="Rent" HorizontalAlignment="Left" Margin="463,139,0,0" VerticalAlignment="Top" Width="75" Click="btnRent_Click"/>
+        <Button x:Name="btnChangePassword" Content="Change Password" HorizontalAlignment="Left" Margin="348,10,0,0" VerticalAlignment="Top" Width="96" Click="btnChangePassword_Click"/>
+        <Button x:Name="btnAddAdmin" Content="New admin" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top" Width="75" Click="btnAddAdmin_Click"/>
 
     </Grid>
 </Window>

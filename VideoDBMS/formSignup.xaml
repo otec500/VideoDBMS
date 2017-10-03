@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="formSignup" Height="300" Width="300">
     <Grid>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="111,48,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="111,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="111,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="111,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="datBirthdate" HorizontalAlignment="Left" Margin="111,126,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSignup" Content="Button" HorizontalAlignment="Left" Margin="111,181,0,0" VerticalAlignment="Top" Width="75" Click="btnSignup_Click"/>
+        <Button x:Name="btnSignup" Content="Signup" HorizontalAlignment="Left" Margin="111,181,0,0" VerticalAlignment="Top" Width="75" Click="btnSignup_Click"/>
+        <Label x:Name="lblName" Content="User name" HorizontalAlignment="Left" Margin="49,48,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPassword" Content="Password" HorizontalAlignment="Left" Margin="55,87,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDate" Content="Birth date" HorizontalAlignment="Left" Margin="49,125,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

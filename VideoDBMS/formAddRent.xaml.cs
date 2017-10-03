@@ -220,8 +220,8 @@ namespace VideoDBMS
         private void btnRent_Click(object sender, RoutedEventArgs e)
         {
             myOrder order;
+            SqlDataReader dr;
 
-            
             if (lsvOrders.SelectedItems.Count > 0)
             {
                 order = (myOrder)(lsvOrders.SelectedItem);
@@ -229,7 +229,30 @@ namespace VideoDBMS
                 {
                     conn.ConnectionString = @"Data Source = MICHAŁ-KOMPUTER\SQLEXPRESS; Initial Catalog = VideoRental; Integrated Security = True;";// Connect Timeout = 15; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
                     conn.Open();
+                    SqlCommand cmd2 = new SqlCommand("SELECT r.FilmId FROM Rents r WHERE r.FilmId=@filmid;", conn);
+                    cmd2.Parameters.Add(new SqlParameter("filmid", order.FilmId));
+                    try
+                    {
+                        dr = cmd2.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            MessageBox.Show("Film already rented.");
+                            conn.Close();
+                            return;
 
+                        }
+                        conn.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
+                    cmd2.Connection.Close();
+
+
+
+                    conn.Open();
                     SqlCommand cmd = new SqlCommand("INSERT Rents(UserId, FilmId, StartDate, EndDate) VALUES (@userid, @filmid, @startdate, @enddate);", conn);
                     cmd.Parameters.Add(new SqlParameter("userid", order.UserId));
                     cmd.Parameters.Add(new SqlParameter("filmid", order.FilmId));
@@ -245,6 +268,7 @@ namespace VideoDBMS
                     catch (SqlException ex)
                     {
                         MessageBox.Show(ex.Message);
+                        return;
                     }
                     conn.Close();
 

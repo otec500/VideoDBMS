@@ -62,7 +62,7 @@ namespace VideoDBMS
                 cmd.Parameters.Add(new SqlParameter("username", mUser.Name));
                 cmd.Parameters.Add(new SqlParameter("userpassword", mUser.Password));
                 cmd.Parameters.Add(new SqlParameter("date", mUser.BirthDate.Date));
-                cmd.Parameters.Add(new SqlParameter("status", 1));
+                cmd.Parameters.Add(new SqlParameter("status", 2));
                 
                 try
                 {

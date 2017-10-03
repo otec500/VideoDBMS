@@ -143,5 +143,11 @@ namespace VideoDBMS
         {
             new MainWindow().Show(); ;
         }
+
+        private void btnChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            formChangePassword form = new formChangePassword(_user);
+            form.Show();
+        }
     }
 }

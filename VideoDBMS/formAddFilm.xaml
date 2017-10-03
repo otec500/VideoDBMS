@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoDBMS"
         mc:Ignorable="d"
-        Title="formAddFilm" Height="300" Width="542">
+        Title="formAddFilm" Height="366.65" Width="542">
     <Grid>
-        <ListView x:Name="lsvFilms" HorizontalAlignment="Left" Height="187" Margin="24,20,0,0" VerticalAlignment="Top" Width="323">
+        <ListView x:Name="lsvFilms" HorizontalAlignment="Left" Height="240" Margin="24,20,0,0" VerticalAlignment="Top" Width="323">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Title" Width="80" DisplayMemberBinding="{Binding Title}"/>
@@ -17,12 +17,16 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="24,231,0,0" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
-        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="380,231,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
-        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="23" Margin="371,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDirector" HorizontalAlignment="Left" Height="23" Margin="371,78,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cmbGenre" HorizontalAlignment="Left" Margin="371,186,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="datYear" HorizontalAlignment="Left" Margin="371,130,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="24,277,0,0" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="371,277,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="23" Margin="371,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDirector" HorizontalAlignment="Left" Height="23" Margin="371,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbGenre" HorizontalAlignment="Left" Margin="371,224,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="datYear" HorizontalAlignment="Left" Margin="371,168,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTitle" Content="Title" HorizontalAlignment="Left" Margin="371,44,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDirector" Content="Director" HorizontalAlignment="Left" Margin="371,95,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblYear" Content="Year" HorizontalAlignment="Left" Margin="371,145,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblGenre" Content="Genre" HorizontalAlignment="Left" Margin="371,201,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
