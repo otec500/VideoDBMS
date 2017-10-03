@@ -25,13 +25,54 @@ namespace VideoDBMS
         public formAdminPanel()
         {
             InitializeComponent();
+            RefreshStats();
         }
         public formAdminPanel(User xUser)
         {
             InitializeComponent();
             _admin = new Admin(xUser);
             lblName.Content = _admin.Name;
+            RefreshStats();
         }
+
+        private void RefreshStats()
+        {
+            SqlDataReader dr;
+            int UsersNum = 0;
+            int FilmsNum = 0;
+            int RentsNum = 0;
+
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = @"Data Source = MICHAŁ-KOMPUTER\SQLEXPRESS; Initial Catalog = VideoRental; Integrated Security = True;";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select (select count(*) from Users) as count1, (select count(*) from Films) as count2, (select count(*) from Rents) as count3;", conn);
+                try
+                {
+                    dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            UsersNum = dr.GetInt32(0);
+                            FilmsNum = dr.GetInt32(1);
+                            RentsNum = dr.GetInt32(2);
+                        }
+
+                    }
+                    conn.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                cmd.Connection.Close();
+            }
+            lblUsersNum.Content = UsersNum.ToString();
+            lblFilmsNum.Content = FilmsNum.ToString();
+            lblRentsNum.Content = RentsNum.ToString();
+        }
+
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
